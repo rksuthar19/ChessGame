@@ -3,7 +3,8 @@ package com.rks.game;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static com.rks.game.ChessBoard.isValidChessBoardCoordinate;
+import static org.junit.Assert.*;
 
 public class TestPiece {
     @Test
@@ -37,5 +38,11 @@ public class TestPiece {
     public void testChessBoard() {
         ChessBoard chessBoard = new ChessBoard();
         System.out.println(chessBoard);
+        assertFalse( isValidChessBoardCoordinate(new Coordinate(8,9)));
+        assertFalse( isValidChessBoardCoordinate(new Coordinate(-6,7)));
+
+        assertTrue( isValidChessBoardCoordinate(new Coordinate(0,0)));
+        assertTrue( isValidChessBoardCoordinate(new Coordinate(7,7)));
+        assertTrue( isValidChessBoardCoordinate(new Coordinate(4,5)));
     }
 }

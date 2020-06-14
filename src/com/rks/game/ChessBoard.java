@@ -14,6 +14,10 @@ class ChessBoard {
         }
     }
 
+    public static boolean isValidChessBoardCoordinate(Coordinate coordinate) {
+        return coordinate.getX_pos() >= 0 && coordinate.getX_pos() <= 7 && coordinate.getY_pos() >= 0 && coordinate.getX_pos() <= 7;
+    }
+
     @Override
     public String toString() {
         StringBuilder displayString = new StringBuilder();
