@@ -18,19 +18,75 @@ public class TestPiece {
         Coordinate coordinate;
 
         coordinate = new Coordinate(0, 0);
-        assertEquals("A1", coordinate.getIdentifier());
+        assertEquals("A8", coordinate.getIdentifier());
+
+        coordinate = new Coordinate("A8");
+        assertEquals(0, coordinate.getX_pos());
+        assertEquals(0, coordinate.getY_pos());
+
         System.out.println(coordinate);
 
         coordinate = new Coordinate(0, 1);
-        assertEquals("A2", coordinate.getIdentifier());
+        assertEquals("A7", coordinate.getIdentifier());
+
+        coordinate = new Coordinate("A8");
+        assertEquals(0, coordinate.getX_pos());
+        assertEquals(0, coordinate.getY_pos());
+
+        System.out.println(coordinate);
+
+        coordinate = new Coordinate(0, 2);
+        assertEquals("A6", coordinate.getIdentifier());
+
+        coordinate = new Coordinate("A8");
+        assertEquals(0, coordinate.getX_pos());
+        assertEquals(0, coordinate.getY_pos());
+
         System.out.println(coordinate);
 
         coordinate = new Coordinate(0, 7);
-        assertEquals("A8", coordinate.getIdentifier());
+        assertEquals("A1", coordinate.getIdentifier());
+
+        coordinate = new Coordinate("A1");
+        assertEquals(0, coordinate.getX_pos());
+        assertEquals(7, coordinate.getY_pos());
+
+        System.out.println(coordinate);
+
+        coordinate = new Coordinate(2, 7);
+        assertEquals("C1", coordinate.getIdentifier());
+
+        coordinate = new Coordinate("C1");
+        assertEquals(2, coordinate.getX_pos());
+        assertEquals(7, coordinate.getY_pos());
+
         System.out.println(coordinate);
 
         coordinate = new Coordinate(7, 7);
-        assertEquals("H8", coordinate.getIdentifier());
+        assertEquals("H1", coordinate.getIdentifier());
+
+        coordinate = new Coordinate("H1");
+        assertEquals(7, coordinate.getX_pos());
+        assertEquals(7, coordinate.getY_pos());
+
+        System.out.println(coordinate);
+
+        coordinate = new Coordinate(2, 3);
+        assertEquals("C5", coordinate.getIdentifier());
+
+        coordinate = new Coordinate("C5");
+        assertEquals(2, coordinate.getX_pos());
+        assertEquals(3, coordinate.getY_pos());
+
+        System.out.println(coordinate);
+
+        coordinate = new Coordinate(5, 5);
+        assertEquals("F3", coordinate.getIdentifier());
+
+        coordinate = new Coordinate("F3");
+        assertEquals(5, coordinate.getX_pos());
+        assertEquals(5, coordinate.getY_pos());
+
         System.out.println(coordinate);
     }
 

@@ -9,6 +9,11 @@ class Coordinate {
         this.y_pos = y_pos;
     }
 
+    public Coordinate(String identifierString) {
+        this.x_pos = identifierString.charAt(0) - 'A';
+        this.y_pos = '8'-identifierString.charAt(1);
+    }
+
     public int getX_pos() {
         return x_pos;
     }
