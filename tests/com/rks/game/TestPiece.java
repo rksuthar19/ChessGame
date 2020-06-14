@@ -32,4 +32,10 @@ public class TestPiece {
         assertEquals("H8", coordinate.getIdentifier());
         System.out.println(coordinate);
     }
+
+    @Test
+    public void testChessBoard() {
+        ChessBoard chessBoard = new ChessBoard();
+        System.out.println(chessBoard);
+    }
 }

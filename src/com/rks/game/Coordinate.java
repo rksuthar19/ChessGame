@@ -8,7 +8,7 @@ class Coordinate {
         this.x_pos = x_pos;
         this.y_pos = y_pos;
     }
-    
+
     public int getX_pos() {
         return x_pos;
     }
@@ -26,6 +26,6 @@ class Coordinate {
     }
 
     public String getIdentifier() {
-        return (char) ('A' + getX_pos()) + "" + (char) ('1' + getY_pos());
+        return (char) ('A' + getX_pos()) + "" + (char) ('8' - getY_pos());
     }
 }
