@@ -11,7 +11,7 @@ class Coordinate {
 
     public Coordinate(String identifierString) {
         this.x_pos = identifierString.charAt(0) - 'A';
-        this.y_pos = '8'-identifierString.charAt(1);
+        this.y_pos = '8' - identifierString.charAt(1);
     }
 
     public int getX_pos() {

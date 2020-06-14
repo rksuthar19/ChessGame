@@ -1,6 +1,9 @@
 package com.rks.game;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.rks.game.ChessBoard.isValidChessBoardCoordinate;
 
 public class Horse extends Piece {
 
@@ -10,6 +13,44 @@ public class Horse extends Piece {
     }
 
     public List<Coordinate> possibleMoves(Coordinate start) {
-        return null;
+        Coordinate possibleCoordinate;
+        List<Coordinate> possibleMoves = new ArrayList<Coordinate>();
+
+        //TWO STEP X AND TURN
+        possibleCoordinate = new Coordinate(start.getX_pos() + 2, start.getY_pos() + 1);
+        if (isValidChessBoardCoordinate(possibleCoordinate)) {
+            possibleMoves.add(possibleCoordinate);
+        }
+        possibleCoordinate = new Coordinate(start.getX_pos() + 2, start.getY_pos() - 1);
+        if (isValidChessBoardCoordinate(possibleCoordinate)) {
+            possibleMoves.add(possibleCoordinate);
+        }
+        possibleCoordinate = new Coordinate(start.getX_pos() - 2, start.getY_pos() + 1);
+        if (isValidChessBoardCoordinate(possibleCoordinate)) {
+            possibleMoves.add(possibleCoordinate);
+        }
+        possibleCoordinate = new Coordinate(start.getX_pos() - 2, start.getY_pos() - 1);
+        if (isValidChessBoardCoordinate(possibleCoordinate)) {
+            possibleMoves.add(possibleCoordinate);
+        }
+
+        //TWO STEP Y AND TURN
+        possibleCoordinate = new Coordinate(start.getX_pos() + 1, start.getY_pos() + 2);
+        if (isValidChessBoardCoordinate(possibleCoordinate)) {
+            possibleMoves.add(possibleCoordinate);
+        }
+        possibleCoordinate = new Coordinate(start.getX_pos() - 1, start.getY_pos() + 2);
+        if (isValidChessBoardCoordinate(possibleCoordinate)) {
+            possibleMoves.add(possibleCoordinate);
+        }
+        possibleCoordinate = new Coordinate(start.getX_pos() + 1, start.getY_pos() - 2);
+        if (isValidChessBoardCoordinate(possibleCoordinate)) {
+            possibleMoves.add(possibleCoordinate);
+        }
+        possibleCoordinate = new Coordinate(start.getX_pos() - 1, start.getY_pos() - 2);
+        if (isValidChessBoardCoordinate(possibleCoordinate)) {
+            possibleMoves.add(possibleCoordinate);
+        }
+        return possibleMoves;
     }
 }

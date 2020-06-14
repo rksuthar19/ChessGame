@@ -3,6 +3,8 @@ package com.rks.game;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static com.rks.game.ChessBoard.isValidChessBoardCoordinate;
 import static org.junit.Assert.*;
 
@@ -105,6 +107,20 @@ public class TestPiece {
     @Test
     public void testHorsePossibleMoves() {
         Piece horse = new Horse();
-        horse.possibleMoves(new Coordinate(0, 0));
+        List<Coordinate> coordinates = horse.possibleMoves(new Coordinate("A8"));
+        assertEquals(2, coordinates.size());
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("B6")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("C7")));
+
+        coordinates = horse.possibleMoves(new Coordinate("E3"));
+        assertEquals(8, coordinates.size());
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("C2")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("C4")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("D1")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("D5")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("F1")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("F5")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("G2")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("G4")));
     }
 }
