@@ -38,11 +38,17 @@ public class TestPiece {
     public void testChessBoard() {
         ChessBoard chessBoard = new ChessBoard();
         System.out.println(chessBoard);
-        assertFalse( isValidChessBoardCoordinate(new Coordinate(8,9)));
-        assertFalse( isValidChessBoardCoordinate(new Coordinate(-6,7)));
+        assertFalse(isValidChessBoardCoordinate(new Coordinate(8, 9)));
+        assertFalse(isValidChessBoardCoordinate(new Coordinate(-6, 7)));
 
-        assertTrue( isValidChessBoardCoordinate(new Coordinate(0,0)));
-        assertTrue( isValidChessBoardCoordinate(new Coordinate(7,7)));
-        assertTrue( isValidChessBoardCoordinate(new Coordinate(4,5)));
+        assertTrue(isValidChessBoardCoordinate(new Coordinate(0, 0)));
+        assertTrue(isValidChessBoardCoordinate(new Coordinate(7, 7)));
+        assertTrue(isValidChessBoardCoordinate(new Coordinate(4, 5)));
+    }
+
+    @Test
+    public void testHorsePossibleMoves() {
+        Piece horse = new Horse();
+        horse.possibleMoves(new Coordinate(0, 0));
     }
 }
