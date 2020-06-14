@@ -1,9 +1,11 @@
-package com.rks.game;
+package com.rks.game.chess;
+
+import com.rks.game.chess.util.Coordinate;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.rks.game.ChessBoard.isValidChessBoardCoordinate;
+import static com.rks.game.chess.ChessBoard.isValidChessBoardCoordinate;
 
 public class Horse extends Piece {
 

@@ -1,14 +1,16 @@
 package com.rks.game;
 
 
+import com.rks.game.chess.*;
+import com.rks.game.chess.util.Coordinate;
 import org.junit.Test;
 
 import java.util.List;
 
-import static com.rks.game.ChessBoard.isValidChessBoardCoordinate;
+import static com.rks.game.chess.ChessBoard.isValidChessBoardCoordinate;
 import static org.junit.Assert.*;
 
-public class TestPiece {
+public class TestChessGameComponents {
     @Test
     public void testPiece() {
         Piece horse = new Horse();
@@ -122,5 +124,64 @@ public class TestPiece {
         assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("F5")));
         assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("G2")));
         assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("G4")));
+    }
+
+    @Test
+    public void testKingPossibleMoves() {
+        Piece king = new King();
+        List<Coordinate> coordinates = king.possibleMoves(new Coordinate("D5"));
+        assertEquals(8, coordinates.size());
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("C6")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("C5")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("C4")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("D6")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("D4")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("E6")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("E5")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("E4")));
+    }
+
+    @Test
+    public void testQueenPossibleMoves() {
+        Piece queen = new Queen();
+        List<Coordinate> coordinates = queen.possibleMoves(new Coordinate("D5"));
+        assertEquals(63, coordinates.size());
+        assertFalse(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("D5")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("A1")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("A2")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("A3")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("B6")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("D4")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("E6")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("E5")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("E4")));
+    }
+
+    @Test
+    public void testBishop() {
+        Piece bishop = new Bishop();
+        List<Coordinate> coordinates = bishop.possibleMoves(new Coordinate("D5"));
+        coordinates.forEach(c -> System.out.println(c.getIdentifier()));
+        assertEquals(13, coordinates.size());
+
+
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("A8")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("B7")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("C6")));
+
+        assertFalse(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("D5")));
+
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("E6")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("F7")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("G8")));
+
+
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("C4")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("B3")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("A2")));
+
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("E4")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("F3")));
+        assertTrue(coordinates.stream().anyMatch(v -> v.getIdentifier().equals("G2")));
     }
 }

@@ -1,10 +1,10 @@
-package com.rks.game;
+package com.rks.game.chess.util;
 
-class Coordinate {
+public class Coordinate {
     private int x_pos;
     private int y_pos;
 
-    Coordinate(int x_pos, int y_pos) {
+    public Coordinate(int x_pos, int y_pos) {
         this.x_pos = x_pos;
         this.y_pos = y_pos;
     }

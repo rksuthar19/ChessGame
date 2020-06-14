@@ -1,4 +1,6 @@
-package com.rks.game;
+package com.rks.game.chess;
+
+import com.rks.game.chess.util.Coordinate;
 
 public class ChessBox {
     private Coordinate coordinate;

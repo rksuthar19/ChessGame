@@ -1,12 +1,14 @@
-package com.rks.game;
+package com.rks.game.chess;
 
-class ChessBoard {
+import com.rks.game.chess.util.Coordinate;
+
+public class ChessBoard {
     private ChessBox[][] boxes = new ChessBox[8][8];
 
     /**
      * Attach Chess Box on Chess Board
      */
-    ChessBoard() {
+    public ChessBoard() {
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 8; y++) {
                 boxes[y][x] = new ChessBox(new Coordinate(x, y));
